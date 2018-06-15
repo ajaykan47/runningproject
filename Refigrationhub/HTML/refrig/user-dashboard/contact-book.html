@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Dashboard My Refrigration Hub</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/select2/select2.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+      </li>
+     
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fa fa-bell-o"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fa fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fa fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fa fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link user" data-toggle="dropdown" href="#" >
+          <i class="fa fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            
+          <a href="#" class="dropdown-item">
+           My Dashboard
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+           My Inquiries
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+           Post Buy Leads
+          </a>
+            <div class="dropdown-divider"></div>
+            <a href="" class="dropdown-item">Latest Buy Leads For Me</a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">Signout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="../images/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+     
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Name</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="mydashboard.html" class="nav-link active">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Dashboard               
+              </p>
+            </a>            
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+               Profile
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="business-profile.html" class="nav-link active">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Business Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="personal-profile.html" class="nav-link active">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Personal Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="products-services.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>My Products &amp; Services</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="gstin-details.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>GSTIN Details</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-envelope-o"></i>
+              <p>
+                Inquiries &amp; Contacts
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="inquiries-inbox.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Inbox</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="inquiries-responses.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Responses Received</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="sent-inquiries.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Sent</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="contact-book.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Contact Book</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-edit"></i>
+              <p>
+                Buy Leads
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Latest Buy Leads</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Post Buy Leads</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Manage Buy Leads</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Important/Saved</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Purchased Buy Leads</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-table"></i>
+              <p>
+                Featured Product
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Add Featured Product</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Manage Featured Product</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-table"></i>
+              <p>
+                Services
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>My Services</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-cogs"></i>
+              <p>
+                Privacy/ Settings
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Privacy Settings</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>My Subscriptions</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Call Settings</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Alerts</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Contact Book</h1>
+          </div><!-- /.col -->
+          
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <div class="col-md-12">
+            <!-- MAP & BOX PANE -->
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="d-md-flex mar">
+                <div class="col-12">
+            <!-- Custom Tabs -->
+            <div class="card card-primary card-outline">
+                     <div class="card-header">
+                  <div class="row">
+                  <div class="col-md-6">
+                   <h5 class="card-title dis1">Contact Book :</h5>
+                  </div>
+                      <div class="col-md-3">
+                      <div class="card-tools">
+                <div class="input-group input-group-sm">
+                  <input type="text" class="form-control" placeholder="Search by name / company">
+                  <div class="input-group-append">
+                    <div class="btn btn-primary">
+                      <i class="fa fa-search"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                      </div>
+                     
+                      <div class="col-md-3">
+                      <div class="float-right">
+                  1-50/200
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                  </div>
+                  <!-- /.btn-group -->
+                </div>
+                      </div>
+                  </div>
+              </div>
+          
+            <div class="card-body">
+             <div class="row">
+                <div class="col-md-2">
+                 <div class="company-name">
+                    Name
+                    </div>
+                 </div>
+                 <div class="col-md-10">
+                     <div class="contactright">
+                 <h3 class="card-title"> Ssj  samar</h3>
+                     <div class="contactno">+xx xxxxxxxxxx</div>
+                     <div class="contactno">Smr cricket company Name</div>
+                     <div class="contactno">Connected   15 days ago</div>
+                    </div>
+                 </div>
+                </div> 
+             <div class="row">
+                <div class="col-md-2">
+                 <div class="company-name">
+                    Name
+                    </div>
+                 </div>
+                 <div class="col-md-10">
+                     <div class="contactright">
+                 <h3 class="card-title"> Ssj  samar</h3>
+                     <div class="contactno">+xx xxxxxxxxxx</div>
+                     <div class="contactno">Smr cricket company Name</div>
+                     <div class="contactno">Connected   15 days ago</div>
+                    </div>
+                 </div>
+                </div> 
+            </div>
+            <!-- /.card-body -->
+          
+              
+            </div>
+            <!-- ./card -->
+          </div>
+                </div><!-- /.d-md-flex -->
+              </div>
+              <!-- /.card-body -->
+           
+            <!-- /.card -->
+            
+           
+          </div>
+          <!-- /.col -->
+
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- Default to the left -->
+    © 2018 Refrigrationhub.com All Rights Reserved Design by  <a href="https://flawlessindia.in" target="_blank">FlawlessIndia.</a> 
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+    <script src="plugins/select2/select2.full.min.js"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="dist/js/demo.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- SparkLine -->
+<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jVectorMap -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- ChartJS 1.0.2 -->
+<script src="plugins/chartjs-old/Chart.min.js"></script>
+<script src="plugins/fastclick/fastclick.min.js"></script>
+<!-- PAGE SCRIPTS -->
+<script src="dist/js/pages/dashboard2.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+   <script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script> 
+   
+   <script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script>
+    <script>
+  $(function () {
+    //Enable iCheck plugin for checkboxes
+    //iCheck for checkbox and radio inputs
+    $('.mailbox-messages input[type="checkbox"]').iCheck({
+      checkboxClass: 'icheckbox_flat-blue',
+      radioClass   : 'iradio_flat-blue'
+    })
+
+    //Enable check and uncheck all functionality
+    $('.checkbox-toggle').click(function () {
+      var clicks = $(this).data('clicks')
+      if (clicks) {
+        //Uncheck all checkboxes
+        $('.mailbox-messages input[type=\'checkbox\']').iCheck('uncheck')
+        $('.fa', this).removeClass('fa-check-square-o').addClass('fa-square-o')
+      } else {
+        //Check all checkboxes
+        $('.mailbox-messages input[type=\'checkbox\']').iCheck('check')
+        $('.fa', this).removeClass('fa-square-o').addClass('fa-check-square-o')
+      }
+      $(this).data('clicks', !clicks)
+    })
+
+    //Handle starring for glyphicon and font awesome
+    $('.mailbox-star').click(function (e) {
+      e.preventDefault()
+      //detect type
+      var $this = $(this).find('a > i')
+      var glyph = $this.hasClass('glyphicon')
+      var fa    = $this.hasClass('fa')
+
+      //Switch states
+      if (glyph) {
+        $this.toggleClass('glyphicon-star')
+        $this.toggleClass('glyphicon-star-empty')
+      }
+
+      if (fa) {
+        $this.toggleClass('fa-star')
+        $this.toggleClass('fa-star-o')
+      }
+    })
+  })
+</script>
+</body>
+</html>

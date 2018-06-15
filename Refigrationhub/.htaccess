@@ -1,0 +1,13 @@
+RewriteOptions inherit
+
+RewriteEngine On
+#RewriteBase /mudrak/vcanship/
+
+# to enforce a no-trailing-slash policy
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
