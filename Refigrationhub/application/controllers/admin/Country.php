@@ -440,7 +440,7 @@ class Country extends CI_Controller
         $this->load->view('admin/include/sidebar');
         $data['list'] = $this->Country_model->getListByUserTypeJoinCity();
         $this->load->view('admin/country/list-city', $data);
-        //$this->load->view('admin/include/footer');
+        //$this->load->view('admin/include/footer-list');
 
     }
 

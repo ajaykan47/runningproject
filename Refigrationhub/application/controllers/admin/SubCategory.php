@@ -31,10 +31,9 @@ class SubCategory extends CI_Controller
         $tableName = "tbl_subcategory";
         $DbKey = "subcat_id";
         $data['editResult'] = $this->Setting_model->getListById($idG, $DbKey, $tableName);
-        //  echo '<pre>';
-        //print_r($data['editResult']); die;
+
         $data['ddlCategory'] = $this->Category_model->getddlCategory();
-        //print_r( $data['ddlCategory']); die;
+
         $this->load->view('admin/sub-category/index', $data);
         $this->load->view('admin/include/footer');
 

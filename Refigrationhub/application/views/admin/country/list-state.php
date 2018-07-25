@@ -32,7 +32,7 @@ $user_type = $data['value']['user_type'];
                 <?php } ?>
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">All User List <a style="float:right;"
+                        <h3 class="card-title">All State List <a style="float:right;"
                                                                 href="<?php echo base_url(); ?>admin/Country/State">Add
                                 State</a></h3>
                     </div>
@@ -62,12 +62,12 @@ $user_type = $data['value']['user_type'];
                                     <td><?php echo $row->state_name ?></td>
                                   <td><?php echo $row->created_at; ?> </td>
                                 <?php if($user_type==1){?>
-                                    <td><label class="label label-warning"><?php echo $row->delStatus; ?></label></td>
+                                    <td><label class="badge badge-warning"><?php echo $row->delStatus; ?></label></td>
                                     <?php }?>
                                     <td><?php if ($row->status == 'Active') {
-                                            echo "<label class='label label-success' >Active<label>";
+                                            echo "<label class='badge badge-success' >Active<label>";
                                         } else {
-                                            echo "<label class='label label-warning' >Inactive<label>";
+                                            echo "<label class='badge badge-warning' >Inactive<label>";
                                         } ?> </td>
                                     <td class="">
                                         <a href="<?php echo base_url(); ?>admin/Country/State?id=<?php echo base64_encode($row->state_id); ?>"

@@ -156,21 +156,21 @@ class Category extends CI_Controller
         }
     }
 
-    public
-    function listCategory()
+    public function listCategory()
     {
 
         $data['title'] = 'List Category';
         $this->load->view('admin/include/header', $data);
         $this->load->view('admin/include/sidebar');
-        $data['list'] = $this->Category_model->getListByUserType();
+        $tableName='tbl_category';
+        $Wherecondition =array('delStatus'=>'no');
+        $data['list'] = $this->Category_model->getListByUserType($tableName,$Wherecondition);
         $this->load->view('admin/category/list', $data);
 
 
     }
 
-    public
-    function updateRecord()
+    public function updateRecord()
     {
 
         $idH = $this->input->post('hidden_id');

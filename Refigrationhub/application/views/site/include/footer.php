@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-md-9">
                         
 						<img src="<?php echo base_url();?>front_assets/images/logo.png" alt="..">
-				<p class="copyright">&copy; 2018 Refrigrationhub.com All Rights Reserved Design by <a href="http://www.flawlessindia.in/" target="_blank" class="copyright">FlawlessIndia</a>.</p>
+				<p class="copyright">&copy; 2018 Refrigrationhub.com All Rights Reserved Design by <a href="http://www.flawlessindia.in/" target="_blank" class="copyright">Flawless India</a>.</p>
                         </div>
                         		<div class="col-md-3 pull-right">
 								<section class="widget">

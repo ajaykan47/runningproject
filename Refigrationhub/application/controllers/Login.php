@@ -11,7 +11,7 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Registration_Model');
+        $this->load->model('Registration_model');
         $this->load->library('user_agent');
     }
 
@@ -29,110 +29,110 @@ class Login extends CI_Controller
 
     public function userLogin()
     {
-        // print_r($_POST); die;
+
         $username = $this->input->post('inputEmail');
-        $hash_from_database = $this->Registration_Model->getRegisteredUserPass($username);
-        if (!password_verify($this->input->post('inputPass'), $hash_from_database)) {
-            $this->session->set_flashdata('error', 'Please Check Your User Name and Password...!');
+        $password = $this->input->post('inputPass');
+        $hash_from_database = $this->Registration_model->getRegisteredUserPass($username);
+        if (password_verify($password, $hash_from_database)) {
+            $this->session->set_flashdata('error', 'Please Check Your Password and Role Type...!');
             redirect('Login');
         } else {
+
             $password = $hash_from_database;
         }
         $ipAddress = $this->input->ip_address();
         $browser = $this->agent->agent_string();
-        $reguserType = $this->Registration_Model->getRegUserType($username);
+        $userType = $this->Registration_model->getRegUserType($username);
         if (!empty($userType) && ($userType > 0)) {
-            $ddlLoginType = $reguserType;
+            $ddlLoginType = $userType;
+
         } else {
-            $this->session->set_flashdata('error', 'Please Check Your User Name and Password');
+            $this->session->set_flashdata('error', 'Please Check Your User Name and Password Or Contact To Administrator');
+
             redirect('Login');
         }
-        $sess_data = array();
+        $Reg_sess_data = array();
+
         if ($ddlLoginType == 1) {
-            $data = array('reguser_name' => $username,
-                'password' => $password,
-                'user_type' => $ddlLoginType
+            $data = array('reguser_mail' => $username,
+                'resuser_password' => $password,
+                'reguser_type' => $ddlLoginType
 
             );
-            $dataRegUserLoginHistory =
+            $dataLoginHistory =
                 array(
-                    'username' => $username,
-                    'password' => password_hash($password, PASSWORD_DEFAULT),
-                    'user_type' => $ddlLoginType,
-                    'user_agent' => $browser,
-                    'ip_address' => $ipAddress,
-                    'login_time' => date('Y-m-d H:i:s'),
+                    'reguser_agent' => $browser,
+                    'reguser_type' => $ddlLoginType,
+                    'regip_address' => $ipAddress,
+                    'reglogin_time' => date('Y-m-d H:i:s'),
+                    'reguser_name' => $username,
+                    'reguser_password' => $password,
                 );
 
-            $this->db->insert('tbl_userregloginhistory', $dataRegUserLoginHistory);
-            $tableName = 'tbl_login';
-            $this->load->model('Login_Model');
-            $usedetails['result'] = $this->Login_Model->getData($tableName, $data);
-
+            $this->db->insert('tbl_userregloginhistory', $dataLoginHistory);
+            $usedetails['result'] = $this->Registration_model->getRegUserDetailByJoining($data);
             if (!empty($usedetails['result'])) {
-                $uid = $usedetails['result'][0]->id;
-                $name = $usedetails['result'][0]->name;
-                $username = $usedetails['result'][0]->username;
-                $user_type = $usedetails['result'][0]->user_type;
+                $uid = $usedetails['result'][0]->reguser_id;
+                $name = $usedetails['result'][0]->reguser_name;
+                $username = $usedetails['result'][0]->reguser_mail;
+                $user_type = $usedetails['result'][0]->reguser_type;
                 $user_status = $usedetails['result'][0]->status;
-                $mobile = $usedetails['result'][0]->mobile;
-                $privilege = $usedetails['result'][0]->privilege;
-                $regUserSess_data = array(
-                    'name' => $name,
-                    'username' => $username,
-                    'user_type' => $user_type,
-                    'user_status' => $user_status,
-                    'mobile' => $mobile,
-                    'privilege' => $privilege,
-                    'uid' => $uid,
+                $mobile = $usedetails['result'][0]->reguser_mobile;
+                $reguser_company = $usedetails['result'][0]->reguser_company;
+                $Reg_sess_data = array(
+                    'reguser_name' => $name,
+                    'reguser_mail' => $username,
+                    'reguser_type' => $user_type,
+                    'reg_user_status' => $user_status,
+                    'reguser_mobile' => $mobile,
+                    'reguser_company' => $reguser_company,
+                    'reguser_id' => $uid,
                 );
-                $this->session->set_userdata('reguserlogindetails', $regUserSess_data);
+                $this->session->set_userdata('Registerlogindetails', $Reg_sess_data);
                 redirect('user/Dashboard');
             } else {
 
-                $this->session->set_flashdata('error', 'Please Check Your User Name,Password and Role Type Or Contact To Administrator');
+                $this->session->set_flashdata('error', 'Please Check Your User Name and Password Or Contact To Administrator');
                 redirect('Login');
             }
         } else {
-
-            $data = array('username' => $username, 'password' => $password, 'user_type' => $ddlLoginType);
-            $tableName = 'tbl_login';
-            $this->load->model('Login_Model');
-            $usedetails['result'] = $this->Login_Model->getData($tableName, $data);
-
+            $data = array('reguser_mail' => $username,
+                'resuser_password' => $password,
+                'reguser_type' => $ddlLoginType
+            );
+            $usedetails['result'] = $this->Registration_model->getRegUserDetailByJoining($data);
             if (!empty($usedetails['result'])) {
-                $uid = $usedetails['result'][0]->id;
-                $name = $usedetails['result'][0]->name;
-                $username = $usedetails['result'][0]->username;
-                $user_type = $usedetails['result'][0]->user_type;
+                $uid = $usedetails['result'][0]->reguser_id;
+                $name = $usedetails['result'][0]->reguser_name;
+                $username = $usedetails['result'][0]->reguser_mail;
+                $user_type = $usedetails['result'][0]->reguser_type;
                 $user_status = $usedetails['result'][0]->status;
                 $mobile = $usedetails['result'][0]->mobile;
-                $privilege = $usedetails['result'][0]->privilege;
-                $sess_data = array(
-                    'name' => $name,
-                    'username' => $username,
-                    'user_type' => $user_type,
-                    'user_status' => $user_status,
-                    'mobile' => $mobile,
-                    'privilege' => $privilege,
-                    'uid' => $uid,
+                $reguser_company = $usedetails['result'][0]->reguser_company;
+                $Reg_sess_data = array(
+                    'reguser_name' => $name,
+                    'reguser_mail' => $username,
+                    'reguser_type' => $user_type,
+                    'reg_user_status' => $user_status,
+                    'reguser_mobile' => $mobile,
+                    'reguser_company' => $reguser_company,
+                    'reguser_id' => $uid,
                 );
 
-                $this->session->set_userdata('logindetails', $sess_data);
-
-                redirect('user/Dashboard');
+                $this->session->set_userdata('Registerlogindetails', $Reg_sess_data);
+                redirect('buyer/Dashboard');
             } else {
 
-                $this->session->set_flashdata('error', 'Please Check Your User Name,Password and Role Type Or Contact To Administrator');
-                redirect('user/Auth');
+                $this->session->set_flashdata('error', 'Please Check Your User Name and Password Or Contact To Administrator');
+                redirect('Login');
             }
         }
 
     }
 
+    /***************New**********************/
     public function forgotPass()
     {
-
 
         $this->load->view('pages/examples/forgot-password');
 

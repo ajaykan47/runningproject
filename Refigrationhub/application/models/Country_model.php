@@ -122,18 +122,16 @@ class Country_model extends CI_Model
         if ($user_type == 1) {
             $this->db->select('cty.*,ctry.country_name,ctry.country_id,sts.state_id,sts.state_name')
                 ->from('mast_tbl_cities cty')
-                ->join('mast_tbl_countries as ctry', 'ctry.country_id=cty.country_id')
-                ->join('mast_tbl_states as sts', 'sts.state_id=cty.state_id');
-
+                ->join('mast_tbl_countries as ctry', 'ctry.country_id=cty.country_id','left')
+                ->join('mast_tbl_states as sts', 'sts.state_id=cty.state_id','left');
             $query = $this->db->get();
             return $query->result();
         } else {
             $this->db->select('cty.*,ctry.country_name,ctry.country_id,sts.state_id,sts.state_name')
                 ->from('mast_tbl_cities cty')
-                ->join('mast_tbl_countries as ctry', 'ctry.country_id=cty.country_id')
-                ->join('mast_tbl_states as sts', 'sts.state_id=cty.state_id')
-                ->where('sts.delStatus', 'no');
-
+                ->join('mast_tbl_countries as ctry', 'ctry.country_id=cty.country_id','left')
+                ->join('mast_tbl_states as sts', 'sts.state_id=cty.state_id','left')
+                ->where('cty.delStatus', 'no');
             $query = $this->db->get();
             return $query->result();
         }

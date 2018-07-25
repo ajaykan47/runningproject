@@ -28,6 +28,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>front_assets/css/oldie.css">
 		<![endif]-->
+		
+		<style>
+        .ma-10{
+            margin: 10px 0;
+        }
+        .main_navigation{padding-left: 300px;}
+        .main_navigation li{
+            margin: 0 10px;
+        }
+        .secabt{
+            padding: 20px 0;
+        }
+        .secabt p{
+            text-align: justify;
+        }
+        .bxcontact{
+           background-image: linear-gradient(127deg, #ff4557 0%, #e66b77 91%);
+            color: #fff;
+            box-shadow: 0px 4px 10px 0px rgba(230,230,230,1);
+            padding: 10px 17px;
+            border: 1px solid #f2f2f2;
+            border-radius: 40px;
+            border-bottom-right-radius: 4px;
+        }
+        .bxcontact h4, h5{color: #fff}
+        .bxcontact i{
+            vertical-align: baseline;
+            padding: 5px;
+            color: #fff;
+        }
+        .fa-star{
+            vertical-align: baseline;
+    padding: 5px;
+    color: #ff4557;
+        }
+        .bxp{width: 30%; float: left}
+        .bxp1{width: 70%; float: left}
+    </style>
+		
 	</head>
 	<body class="front_page">
 	
@@ -141,18 +180,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="div">
 					<div class="container">
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-sm-10">
 								<div class="nav_item">
 										<button class="toggle_menu"></button><nav class="main_navigation">
 											<ul>
 
 												<li><a href="#">Home</a></li>
 												<li><a href="#">Product &amp; Services</a></li>
-												<li><a href="#">Contact Us</a></li>
+												<li><a href="scontact.html">Contact Us</a></li>
 											</ul>
 										</nav>
 									</div>
 							</div>
+							<div class="col-sm-2">
+                            <a href="" class="btn btn-primary pull-right ma-10" data-toggle="modal" data-target="#myreceivercompany">Send Inquiry</a>
+                            </div>
 						</div>
 					</div>
 				</div>

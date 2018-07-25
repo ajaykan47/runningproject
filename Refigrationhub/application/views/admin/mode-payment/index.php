@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$data['value'] = $this->session->userdata('logindetails');
+$user_type = $data['value']['user_type'];
 /**
  * Created by $ajaykan47.
  * User: Flawlessindia
@@ -103,6 +105,9 @@ if (!empty($editResult[0]->mast_modepayment_id)) {
                     <th>Date</th>
                     <th>Update</th>
                     <th>Status</th>
+                    <?php if($user_type==1):?>
+                    <th>Del Status</th>
+                    <?php endif; ?>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -117,10 +122,23 @@ if (!empty($editResult[0]->mast_modepayment_id)) {
                         <td><?php echo $row->created_at ;?> </td>
                         <td><?php echo $row->updated_at ;?> </td>
                         <td><?php if ($row->status == 'Active') {
-                                echo "<label class='label label-success' >Active<label>";
+                                echo "<label class='badge badge-success' >Active<label>";
                             } else {
-                                echo "<label class='label label-warning' >Inactive<label>";
+                                echo "<label class='badge badge-warning' >Inactive<label>";
                             } ?> </td>
+
+                        <?php if($user_type==1):?>
+                            <td><?php if ($row->delStatus == 'yes') { ?>
+                                    <a href="<?php echo base_url(); ?>admin/ModePayment/Restore?id=<?php echo base64_encode($row->mast_modepayment_id); ?>"
+                                       onclick="return confirm('Would you really want to restore Mode Of Payment  ?');"
+                                       class="badge badge-warning">
+                                        Restore
+                                    </a>
+                                <?php } else {
+                                    echo "<label class='badge badge-success' >Active<label>";
+                                } ?> </td>
+                        <?php endif; ?>
+
                         <td class="center">
                             <a href="<?php echo base_url(); ?>admin/ModePayment?id=<?php echo base64_encode($row->mast_modepayment_id); ?>"
                                class="btn btn-primary">

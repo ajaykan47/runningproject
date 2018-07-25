@@ -47,9 +47,9 @@ $user_type = $data['value']['user_type'];
                                 <th>Sub-Category</th>
                                 <th>Added By</th>
                                 <?php if ($user_type == 1) { ?>
-                                    <th>Delete Date</th>
-                                    <th>Delete Ip</th>
 
+                                    <th>Delete Ip</th>
+                                    <th>Delete Date</th>
                                 <th>Delete Status</th>
                                 <?php } ?>
                                 <th>Date</th>
@@ -70,33 +70,38 @@ $user_type = $data['value']['user_type'];
                                     <td><?php echo $row->cat_name ?></td>
                                     <td><?php echo $row->subcat_name ?></td>
                                     <td><?php if ($row->created_by == '1') {
-                                            echo "<label class='label label-success' >Adminstration<label>";
+                                            echo "<label class='badge badge-success' >Adminstration<label>";
                                         } else {
-                                            echo "<label class='label label-warning' >Admin<label>";
+                                            echo "<label class='badge badge-warning' >Admin<label>";
                                         } ?> </td>
                                     <?php if ($user_type == 1) { ?>
-                                        <td><?php echo $row->delDate; ?> </td>
                                         <td><?php echo $row->delIp; ?> </td>
+                                        <td><?php echo $row->delDate; ?> </td>
 
-                                    <td><?php echo $row->delStatus; ?> </td>
+                                            <td><?php if ($row->delStatus == 'yes') { ?>
+                                                    <a href="<?php echo base_url(); ?>admin/SubCategory/Restore?id=<?php echo base64_encode($row->subcat_id); ?>"
+                                                       onclick="return confirm('Would you want to restore Sub-category ?');"
+                                                       class="badge badge-warning">
+                                                        Restore
+                                                    </a>
+                                                <?php } else {
+                                                    echo "<label class='badge badge-success' >Active<label>";
+                                                } ?> </td>
+
+
                                     <?php } ?>
                                     <td><?php echo $row->created_at; ?> </td>
                                     <td><?php if ($row->status == 'Active') {
-                                            echo "<label class='label label-success' >Active<label>";
+                                            echo "<label class='badge badge-success' >Active<label>";
                                         } else {
-                                            echo "<label class='label label-warning' >Inactive<label>";
+                                            echo "<label class='badge badge-warning' >Inactive<label>";
                                         } ?> </td>
                                     <td class="">
                                         <a href="<?php echo base_url(); ?>admin/SubCategory?id=<?php echo base64_encode($row->subcat_id); ?>"
                                            class="btn btn-primary">
                                             Edit
                                         </a>
-                                        <?php if ($user_type == 1) { ?>
-                                        <a href="<?php echo base_url(); ?>admin/SubCategory/Restore?id=<?php echo base64_encode($row->subcat_id); ?>"
-                                           class="btn btn-success">
-                                            Restore
-                                        </a>
-                                        <?php }?>
+
                                         <a class="btn btn-danger"
                                            href="<?php echo base_url(); ?>admin/SubCategory/deleteSubCategory?id=<?php echo base64_encode($row->subcat_id); ?>"
                                            onclick="return confirm('Would you want to delete category record ?');">Delete</a>

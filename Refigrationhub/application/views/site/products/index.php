@@ -697,4 +697,63 @@
 			
 			
 			<!-- - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->
+            <!-- Modal for contact Detail-->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                            <h4 class="modal-title">Please login to view Supplier Mobile Number</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <form action="#">
+                                    <div class="col-md-9 col-md-offset-3">
+                                        <div class="form-group">
+                                            <input type="radio" class="form-control" name="" id="radio_1">
+                                            <label for="radio_1">I want to Sell</label>
+                                            <input type="radio" name="" id="radio_2">
+                                            <label for="radio_2">I want to Buy</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Enter Name" class="form-control" id="" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">+91</div>
+                                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Mobile Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Enter Email-Id" class="form-control" id="" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <div class="form_group">
+                                            <input checked="" type="checkbox" name="" id="checkbox_1">
+                                            <label for="checkbox_1">I agree to abide by all the Terms and Conditions of refrigrationhub.com</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 col-md-offset-3">
+                                        <div class="form-group">
+                                            <input type="submit" value="Verify Now" class="button_blue middle_btn">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Modal content-->
 		

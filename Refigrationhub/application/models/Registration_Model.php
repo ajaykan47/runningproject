@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 6/7/2018**********
  * Time: 5:52 PM**************
  **************************/
-class Registration_Model extends CI_Model
+class Registration_model extends CI_Model
 {
 
     public function getData($tableName, $data)
@@ -23,9 +23,12 @@ class Registration_Model extends CI_Model
         $this->db->select('resuser_password');
         $this->db->from('tbl_userregistration');
         $this->db->where('reguser_mail', $username);
+        $this->db->where('status', 'Active');
+        $this->db->where('delStatus', 'no');
         $query = $this->db->get();
         $ret = $query->row();
-        return $ret->password;
+
+        return $ret->resuser_password;
     }
 
     public function getRegUserType($username)
@@ -33,10 +36,22 @@ class Registration_Model extends CI_Model
         $this->db->select('reguser_type');
         $this->db->from('tbl_userregistration');
         $this->db->where('reguser_mail', $username);
+        $this->db->where('status', 'Active');
+        $this->db->where('delStatus', 'no');
         $query = $this->db->get();
         $ret = $query->row();
         return $ret->reguser_type;
     }
 
+
+    public function getRegUserDetailByJoining($data)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_userregistration as reg');
+        $this->db->join('tbl_userregistrationdetail as rdt', 'rdt.reguser_id=reg.reguser_id');
+        $this->db->where($data);
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 }

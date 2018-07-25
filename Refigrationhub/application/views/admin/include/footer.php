@@ -2,10 +2,10 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-sm-none d-md-block">
-      Anything you want
+    <!--  Anything you want-->
     </div>
     <!-- Default to the left -->
-      © 2018 Refrigeration.com All Rights Reserved Design & Development by  <a href="https://flawlessindia.in" target="_blank">FlawlessIndia.</a>
+      © 2018 Refrigeration.com All Rights Reserved Design & Development by  <a href="https://flawlessindia.in" target="_blank">Flawless India.</a>
   </footer>
 </div>
 <!-- ./wrapper -->

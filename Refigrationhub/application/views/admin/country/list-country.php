@@ -57,11 +57,11 @@ $user_type = $data['value']['user_type'];
                                     <td><?php echo $sn++; ?></td>
                                     <td><?php echo $row->country_name ?></td>
                                   <td><?php echo $row->created_at; ?> </td>
-                                    <td><label class="label label-warning"><?php echo $row->delStatus; ?></label></td>
+                                    <td><label class="badge badge-warning"><?php echo $row->delStatus; ?></label></td>
                                     <td><?php if ($row->status == 'Active') {
-                                            echo "<label class='label label-success' >Active<label>";
+                                            echo "<label class='badge badge-success' >Active<label>";
                                         } else {
-                                            echo "<label class='label label-warning' >Inactive<label>";
+                                            echo "<label class='badge badge-warning' >Inactive<label>";
                                         } ?> </td>
                                     <td class="">
                                         <a href="<?php echo base_url(); ?>admin/Country?id=<?php echo base64_encode($row->country_id); ?>"

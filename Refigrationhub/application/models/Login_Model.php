@@ -22,15 +22,6 @@ class Login_Model extends CI_Model
 
     }
 
-    /* public function getLoginByUsernameTYpe($username)
-     {
-         $this->db->select('user_type');
-         $this->db->from('tbl_login');
-         $this->db->where('username',$username);
-         $query= $this->db->get();
-         return $query->result();
-     }*/
-
     public function getUserPass($username)
     {
         $this->db->select('password');

@@ -16,6 +16,7 @@ class ModePayment extends CI_Controller{
             redirect('admin/Auth');
         }
         $this->load->model('Setting_model');
+        $this->load->model('Category_model');
     }
 
     public function index()
@@ -29,7 +30,8 @@ class ModePayment extends CI_Controller{
         $DbKey = "mast_modepayment_id";
         $data['editResult'] = $this->Setting_model->getListById($idG, $DbKey, $tableName);
         $tableName = "mast_tbl_modepayment";
-        $data['list'] = $this->Setting_model->getList($tableName);
+        $Wherecondition = array('delStatus' => 'no');
+        $data['list'] = $this->Category_model->getListByUserType($tableName, $Wherecondition);
         $this->load->view('admin/mode-payment/index', $data);
         $this->load->view('admin/include/footer');
 
@@ -116,7 +118,7 @@ class ModePayment extends CI_Controller{
     }
 
 
-    public function deleteOwnType()
+    public function deletePayment()
     {
         $data['value'] = $this->session->userdata('logindetails');
         $user_type = $data['value']['user_type'];
@@ -132,11 +134,11 @@ class ModePayment extends CI_Controller{
             $DbKey = "mast_modepayment_id";
             if ($this->Setting_model->updateRecord($DbKey, $idH, $tableName, $data)) {
 
-                $this->session->set_flashdata('done', 'OwnerShip Type Delete Successfully ...!!');
-                redirect("admin/OwnershipType");
+                $this->session->set_flashdata('done', 'Mode of Payment Delete Successfully ...!!');
+                redirect("admin/ModePayment");
             } else {
-                $this->session->set_flashdata('error', 'OwnerShip Type  is not successfully deleted...!!');
-                redirect("admin/OwnershipType");
+                $this->session->set_flashdata('error', 'Mode of Payment  is not successfully deleted...!!');
+                redirect("admin/ModePayment");
             }
 
         } else {
@@ -145,13 +147,35 @@ class ModePayment extends CI_Controller{
             $DbKey = "mast_modepayment_id";
             if ($this->Setting_model->deleteRecord($DbKey, $idH, $tableName)) {
 
-                $this->session->set_flashdata('done', 'OwnerShip Type Restore Successfully ...!!');
+                $this->session->set_flashdata('done', 'Mode of Payment Restore Successfully ...!!');
                 redirect("admin/ModePayment");
             } else {
-                $this->session->set_flashdata('error', 'OwnerShip Type is Already Restore...!!');
+                $this->session->set_flashdata('error', 'Mode of Payment is Already Restore...!!');
                 redirect("admin/ModePayment");
             }
         }
     }
+
+    public function Restore()
+    {
+        $idH = $this->input->get('id');
+        $idH = base64_decode($idH);
+        $data = array(
+            'delStatus' => 'no'
+        );
+        $tableName = "mast_tbl_modepayment";
+        $DbKey = "mast_modepayment_id";
+        if ($this->Setting_model->updateRecord($DbKey, $idH, $tableName, $data)) {
+
+            $this->session->set_flashdata('done', 'Mode of Payment Restore Successfully ...!!');
+            redirect("admin/ModePayment");
+        } else {
+            $this->session->set_flashdata('error', 'Mode of Payment  is not successfully Restore...!!');
+            redirect("admin/ModePayment");
+        }
+    }
+
+
+
 
 }

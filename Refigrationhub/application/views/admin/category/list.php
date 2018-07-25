@@ -32,8 +32,8 @@ $user_type = $data['value']['user_type'];
                 <?php } ?>
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">All User List <a style="float:right;"
-                                                                href="<?php echo base_url(); ?>admin/Category">Add
+                        <h3 class="card-title">All Category List <a style="float:right;"
+                                                                    href="<?php echo base_url(); ?>admin/Category">Add
                                 Category</a></h3>
                     </div>
                     <!-- /.card-header -->
@@ -46,13 +46,15 @@ $user_type = $data['value']['user_type'];
                                 <th>Name</th>
                                 <th>Added By</th>
                                 <?php if ($user_type == 1) { ?>
-                                    <th>Delete Date</th>
+
                                     <th>Delete Ip</th>
+                                    <th>Delete Date</th>
+                                    <th>Delete Status</th>
                                 <?php } ?>
-                                <th>Delete Status</th>
                                 <th>Date</th>
                                 <th>Status</th>
                                 <th>Action</th>
+                                <th></th>
 
                             </tr>
                             </thead>
@@ -62,25 +64,42 @@ $user_type = $data['value']['user_type'];
                             foreach ($list as $row): ?>
                                 <tr>
                                     <td><?php echo $sn++; ?></td>
-                                   <td><img src="<?php if(!empty($row->file_name)){echo base_url() . 'uploads/category/' . $row->file_name; }else{ echo base_url() . 'uploads/empty/avator.png';}?>" height="100" width="100">
+                                    <td><img src="<?php if (!empty($row->file_name)) {
+                                            echo base_url() . 'uploads/category/' . $row->file_name;
+                                        } else {
+                                            echo base_url() . 'uploads/empty/avator.png';
+                                        } ?>" height="100" width="100">
                                     </td>
 
                                     <td><?php echo $row->cat_name ?></td>
                                     <td><?php if ($row->created_by == '1') {
-                                            echo "<label class='label label-success' >Adminstration<label>";
+                                            echo "<label class='badge badge-success' >Adminstration<label>";
                                         } else {
-                                            echo "<label class='label label-warning' >Admin<label>";
+                                            echo "<label class='badge badge-warning' >Admin<label>";
                                         } ?> </td>
                                     <?php if ($user_type == 1) { ?>
-                                        <td><?php echo $row->delDate; ?> </td>
+
                                         <td><?php echo $row->delIp; ?> </td>
+                                        <td><?php echo $row->delDate; ?> </td>
                                     <?php } ?>
-                                    <td><?php echo $row->delStatus; ?> </td>
+                                    <?php if ($user_type == 1) { ?>
+                                        <td><?php if ($row->delStatus == 'yes') { ?>
+                                                <a href="<?php echo base_url(); ?>admin/Category/Restore?id=<?php echo base64_encode($row->cat_id); ?>"
+                                                   onclick="return confirm('Would you want to restore category ?');"
+                                                   class="badge badge-warning">
+                                                    Restore
+                                                </a>
+                                            <?php } else {
+                                                echo "<label class='badge badge-success' >Active<label>";
+                                            } ?> </td>
+                                    <?php } ?>
+
+
                                     <td><?php echo $row->created_at; ?> </td>
                                     <td><?php if ($row->status == 'Active') {
-                                            echo "<label class='label label-success' >Active<label>";
+                                            echo "<label class='badge badge-success' >Active<label>";
                                         } else {
-                                            echo "<label class='label label-warning' >Inactive<label>";
+                                            echo "<label class='badge badge-warning' >Inactive<label>";
                                         } ?> </td>
                                     <td class="">
                                         <a href="<?php echo base_url(); ?>admin/Category?id=<?php echo base64_encode($row->cat_id); ?>"
@@ -92,10 +111,7 @@ $user_type = $data['value']['user_type'];
                                            class="btn btn-success">
                                             View
                                         </a>
-                                        <a href="<?php echo base_url(); ?>admin/Category/Restore?id=<?php echo base64_encode($row->cat_id); ?>"
-                                           class="btn btn-primary">
-                                            Restore
-                                        </a>
+
                                         <a class="btn btn-danger"
                                            href="<?php echo base_url(); ?>admin/Category/deleteCategory?id=<?php echo base64_encode($row->cat_id); ?>"
                                            onclick="return confirm('Would you want to delete category record ?');">Delete</a>
@@ -215,8 +231,8 @@ $user_type = $data['value']['user_type'];
         Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2018-2019 <a href="http://www.flawlessindia.in" target="_blank">FlawlessIndia</a></strong>
-    All rights reserved.
+    © 2018 Refrigeration.com All Rights Reserved Design & Development by <a href="https://flawlessindia.in"
+                                                                            target="_blank">FlawlessIndia.</a>
 </footer>
 
 <!-- Control Sidebar -->

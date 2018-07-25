@@ -53,14 +53,6 @@
                 <?php } ?>
                 <form action="<?php echo base_url(); ?>JoinFree/registration" method="POST">
                     <div class="form-group">
-                        <select name="txtRegUserType" id="">
-                            <option value="">---Select Type---</option>
-                            <option value="1">Guest</option>
-                            <option value="2">Seller</option>
-                            <option value="3">Buyer</option>
-                        </select>
-                    </div>
-					<div class="form-group">
                         <input type="email" class="form-control" name="txtMail" placeholder="Email-Id">
                     </div>
                     <div class="form-group">
@@ -80,9 +72,16 @@
                         <input type="text" class="form-control" name="txtPinCode" placeholder="Pin Code...">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="txtCityName" placeholder="Type your city here (optional)...">
+                        <input type="text" class="form-control" name="txtCityName"
+                               placeholder="Type your city here (optional)...">
                     </div>
-                    
+                    <div class="form-group">
+                        <select name="txtRegUserType" id="">
+                            <option value="">---Select Type---</option>
+                            <option value="1">Seller</option>
+                            <option value="2">Buyer</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <input type="submit" value="Verify" class="button_blue middle_btn">
                     </div>

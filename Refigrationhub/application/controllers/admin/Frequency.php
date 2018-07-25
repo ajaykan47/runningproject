@@ -154,5 +154,23 @@ class Frequency extends CI_Controller
             }
         }
     }
+    public function Restore()
+    {
+        $idH = $this->input->get('id');
+        $idH = base64_decode($idH);
+        $data = array(
+            'delStatus' => 'no'
+        );
+        $tableName = "mast_tbl_frequency";
+        $DbKey = "mast_frequency_id";
+        if ($this->Setting_model->updateRecord($DbKey, $idH, $tableName, $data)) {
+
+            $this->session->set_flashdata('done', 'Frequency Restore Successfully ...!!');
+            redirect("admin/Frequency");
+        } else {
+            $this->session->set_flashdata('error', 'Frequency is not successfully Restore...!!');
+            redirect("admin/Frequency");
+        }
+    }
 
 }

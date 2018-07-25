@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$data['value'] = $this->session->userdata('logindetails');
+$user_type = $data['value']['user_type'];
 /**
  * Created by $ajaykan47.
  * User: Flawlessindia
@@ -102,6 +104,9 @@ if (!empty($editResult[0]->mast_ownershiptype_id)) {
                     <th>Name</th>
                     <th>Date</th>
                     <th>Update</th>
+                    <?php if ($user_type == 1) { ?>
+                    <th>Del Status</th>
+                    <?php } ?>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -116,10 +121,21 @@ if (!empty($editResult[0]->mast_ownershiptype_id)) {
                         <td><?php echo $row->ownershiptype_name ?></td>
                         <td><?php echo $row->created_at ?> </td>
                         <td><?php echo $row->updated_at ?> </td>
+                         <?php if($user_type==1):?>
+                             <td><?php if ($row->delStatus == 'yes') { ?>
+                                     <a href="<?php echo base_url(); ?>admin/OwnershipType/Restore?id=<?php echo base64_encode($row->mast_ownershiptype_id); ?>"
+                                        onclick="return confirm('Would you want to restore Sub-category ?');"
+                                        class="badge badge-warning">
+                                         Restore
+                                     </a>
+                                 <?php } else {
+                                     echo "<label class='badge badge-success' >Active<label>";
+                                 } ?> </td>
+                         <?php endif; ?>
                         <td><?php if ($row->status == 'Active') {
-                                echo "<label class='label label-success' >Active<label>";
+                                echo "<label class='badge badge-success' >Active<label>";
                             } else {
-                                echo "<label class='label label-warning' >Inactive<label>";
+                                echo "<label class='badge badge-warning' >Inactive<label>";
                             } ?> </td>
                         <td class="center">
                             <a href="<?php echo base_url(); ?>admin/OwnershipType?id=<?php echo base64_encode($row->mast_ownershiptype_id); ?>"

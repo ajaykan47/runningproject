@@ -36,18 +36,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="row">
                         <div class="">
-                    <form action="" method="" class="form-horizontal" >
+                    <form action="<?php echo base_url();?>DisplayNewProducts/" method="POST" class="form-horizontal" >
                       <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                          <input type="email" name="txtEmail" class="form-control" id="inputEmail3" placeholder="Email">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputPassword3" class="col-sm-2 control-label">Choose Category </label>
                         <div class="col-sm-10">
                             <div class="custom_select">
-                                <select name="" id="select_2" style="display: none;">
+                                <select name="" id="select_2" style="display: none;" name="txtCategoryId">
                                     <option value="Select">Select</option>
                                 <option value="Refrigration Parts">Refrigration Parts</option>
                                 <option value="Industerial Parts">Industerial Parts</option>
@@ -59,25 +59,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group">
                                         <label for="ProductName" class="col-sm-2 control-label">Product Name</label>  
                                             <div class="col-sm-10">
-                                              <input type="text" class="form-control" id="" placeholder="Product Name">
+                                              <input type="text" name="txtProductName" class="form-control" id="" placeholder="Product Name">
                                             </div>
                                             </div>
                                             <div class="form-group">
-                                            <label for="ProductCode" class="col-sm-2 control-label">Product Code</label>  
+                                            <label for="ProductCode"  class="col-sm-2 control-label">Product Code</label>
                                             <div class="col-sm-10">
-                                              <input type="text" class="form-control" id="" placeholder="Product Code">
+                                              <input type="text" name="txtProductCode" class="form-control" id="" placeholder="Product Code">
                                             </div>
                                             </div>
                                             <div class="form-group">
                                            <label for="ProductDescription" class="col-sm-2 control-label">Product Description</label>  
                                             <div class="col-sm-10">
-                                                <textarea rows="5" cols="5" class="form-control" id="" placeholder="Product Description"></textarea>
+                                                <textarea rows="5" cols="5" name="txtProdut" class="form-control" id="" placeholder="Product Description"></textarea>
                                             </div>
                                             </div>
                                               <div class="form-group">
                                                   <label for="UploadPicture" class="col-sm-2 control-label">Upload Picture</label>
                                                 <div class="col-sm-offset-2 col-sm-10">
-                                                 <input type="file">
+                                                 <input type="file" name="txtUploadPicture">
                                                 </div>
                                               </div>
                                               <div class="form-group">

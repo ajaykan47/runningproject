@@ -1133,8 +1133,7 @@
 		input[type="radio"]:checked + label::before{ content: '\edb9'; }
 
 		form:not(.type_2) label{
-			float: left;
-			width: 136px;
+			
 		}
 
 		form:not(.type_2) label[for]{ margin-top:7px; }

@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('NAdministrationpt access allowed');
 $data['value'] = $this->session->userdata('logindetails');
 $user_type = $data['value']['user_type'];
 ?>
-
 <!-- DataTables -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>backend/plugins/datatables/dataTables.bootstrap4.min.css">
 <!-- Content Wrapper. Contains page content -->
@@ -66,9 +65,9 @@ $user_type = $data['value']['user_type'];
                                         <td><label class="label label-warning"><?php echo $row->delStatus; ?></label></td>
                                     <?php }?>
                                     <td><?php if ($row->status == 'Active') {
-                                            echo "<label class='label label-success' >Active<label>";
+                                            echo "<label class='badge badge-success' >Active<label>";
                                         } else {
-                                            echo "<label class='label label-warning' >Inactive<label>";
+                                            echo "<label class='badge badge-warning' >Inactive<label>";
                                         } ?> </td>
                                     <td class="">
                                         <a href="<?php echo base_url(); ?>admin/Country/City?id=<?php echo base64_encode($row->city_id); ?>"

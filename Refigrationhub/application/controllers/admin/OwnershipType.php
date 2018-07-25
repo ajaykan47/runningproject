@@ -17,6 +17,7 @@ class OwnershipType extends CI_Controller
             redirect('admin/Auth');
         }
         $this->load->model('Setting_model');
+        $this->load->model('Category_model');
     }
 
     public function index()
@@ -30,10 +31,10 @@ class OwnershipType extends CI_Controller
         $DbKey = "mast_ownershiptype_id";
         $data['editResult'] = $this->Setting_model->getListById($idG, $DbKey, $tableName);
         $tableName = "mast_tbl_ownershiptype";
-        $data['list'] = $this->Setting_model->getList($tableName);
+        $Wherecondition = array('delStatus' => 'no');
+        $data['list'] = $this->Category_model->getListByUserType($tableName, $Wherecondition);
         $this->load->view('admin/ownership-type/index', $data);
         $this->load->view('admin/include/footer');
-
 
     }
 
@@ -151,6 +152,25 @@ class OwnershipType extends CI_Controller
                 $this->session->set_flashdata('error', 'OwnerShip Type is Already Restore...!!');
                 redirect("admin/OwnershipType");
             }
+        }
+    }
+
+    public function Restore()
+    {
+        $idH = $this->input->get('id');
+        $idH = base64_decode($idH);
+        $data = array(
+            'delStatus' => 'no'
+        );
+        $tableName = "mast_tbl_ownershiptype";
+        $DbKey = "mast_ownershiptype_id";
+        if ($this->Setting_model->updateRecord($DbKey, $idH, $tableName, $data)) {
+
+            $this->session->set_flashdata('done', 'OwnerShip Type Restore Successfully ...!!');
+            redirect("admin/OwnershipType");
+        } else {
+            $this->session->set_flashdata('error', 'OwnerShip Type  is not successfully Restore...!!');
+            redirect("admin/OwnershipType");
         }
     }
 

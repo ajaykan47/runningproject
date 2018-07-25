@@ -26,7 +26,7 @@ class User extends CI_Controller
         $DbKey = "id";
         $data['editResult'] = $this->Setting_model->getListById($idG, $DbKey, $tableName);
         $this->load->view('admin/user/index', $data);
-        //$this->load->view('admin/include/footer');
+        $this->load->view('admin/include/footer');
 
     }
     public function addUser()

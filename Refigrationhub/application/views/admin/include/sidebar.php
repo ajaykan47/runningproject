@@ -249,6 +249,28 @@ if ($privilege != NULL) {
                         </ul>
                     </li>
                     <!-------OwnerShip Type----end-------->
+                    <!-------Quanity Unit-------->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-pie-chart"></i>
+                            <p>
+                               Quantity Unit
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo base_url(); ?>admin/QuantityUnit" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Add Quantity Unit</p>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <!-------Quanity Unit-------->
+
+
                     <!------Mode of Payment------>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
@@ -297,21 +319,65 @@ if ($privilege != NULL) {
                     </li>
 
                     <!-----------------Manage Frequency Here------------------->
-                    <!-----------------Manage Seller------------------->
 
+                    <!-----------------Manage Primary Bussiness------------------------>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-circle-o text-danger"></i>
+                            <i class="nav-icon fa fa-pie-chart"></i>
                             <p>
-                                Seller
+                                Primary Business
                                 <i class="fa fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>admin/Seller" class="nav-link">
+                                <a href="<?php echo base_url(); ?>admin/PrimaryBussinessType" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add Seller </p>
+                                    <p>Add Primary Business </p>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-----------------Manage Primary Business end Here------------------->
+
+                    <!-----------------Master  Bushiness Keyword------------------------>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-pie-chart"></i>
+                            <p>
+                              Master Keyword
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo base_url(); ?>admin/MasterKeyword" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Add  Keyword</p>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-----------------Master  Bushiness Keyword ------End Here ------------->
+
+                    <!-----------------Manage Seller------------------->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-circle-o text-danger"></i>
+                            <p>
+                                Buyer/Seller
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo base_url(); ?>admin/Buyer/BuyerList" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>List Buyer </p>
                                 </a>
                                 <a href="<?php echo base_url(); ?>admin/Seller/listSeller" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
@@ -321,8 +387,6 @@ if ($privilege != NULL) {
                         </ul>
                     </li>
                     <!------------------------------------>
-
-
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-edit"></i>

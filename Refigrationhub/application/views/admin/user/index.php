@@ -6,6 +6,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 24-05-2018
  * Time: 01:02 PM
  */
+
+$data['value'] = $this->session->userdata('logindetails');
+$user_type = $data['value']['user_type'];
 ?>
 <?php
 $id = "";
@@ -131,19 +134,13 @@ if (!empty($editResult[0]->id)) {
                                     <div class="input-group">
                                         <select name="txtUserType" class="form-control" required="">
                                             <option value="">--Select Type--</option>
-                                            <option value="1" <?php if ($status == 1) {
-                                                echo 'selected';
-                                            } ?>>Administration
-                                            </option>
-
-                                            <option value="2" <?php if ($status == 2) {
-                                                echo 'selected';
-                                            } ?>>Admin
-                                            </option>
-                                            <option value="3" <?php if ($status == 3) {
-                                                echo 'selected';
-                                            } ?>>Sub-Admin
-                                            </option>
+                                            <?php
+                                            if($user_type==1){?>
+                                            <option value="1" <?php if ($status == 1) { echo 'selected'; } ?>>Administration</option>
+                                            <?php }
+                                            ?>
+                                            <option value="2" <?php if ($status == 2) { echo 'selected'; } ?>>Admin</option>
+                                            <option value="3" <?php if ($status == 3) { echo 'selected'; } ?>>Sub-Admin</option>
 
                                         </select>
 
@@ -171,23 +168,7 @@ if (!empty($editResult[0]->id)) {
                             </div>
                             <div class="form-group">
                                 <label>Privilege</label>
-
-
-                                <?php
-                                if (!empty($editResult)) {
-
-                                    foreach ($editResult as $value) {
-                                        $status = $value->privilege;
-                                    }
-                                }
-                                $privilege = explode(',', $value->privilege);
-                                for ($i = 0;
-                                $i < count($purchase_quantity);
-                                $i++) {
-                                    echo $privilege[$i];
-                                }  ?>
                                 <div class="row">
-
                                     <div class="col-md-12">
                                         <input type='checkbox' name='txtPrivilege[]' value='1'>Manage Lead
                                         <input type='checkbox' name='txtPrivilege[]' value='2'>Manage User
