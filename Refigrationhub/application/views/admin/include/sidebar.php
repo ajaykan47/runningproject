@@ -125,7 +125,6 @@ if ($privilege != NULL) {
         </ul>
     </nav>
     <!-- /.navbar -->
-
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
@@ -133,9 +132,8 @@ if ($privilege != NULL) {
             <img src="<?php echo base_url(); ?>backend/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">Refrigeration</span>
+            <span class="brand-text font-weight-light">Flawless India Pvt Ltd</span>
         </a>
-
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Sidebar user panel (optional) -->
@@ -386,7 +384,7 @@ if ($privilege != NULL) {
                             </li>
                         </ul>
                     </li>
-                    <!------------------------------------>
+                    <!----------Manage Country-------------------------->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-edit"></i>
@@ -431,6 +429,7 @@ if ($privilege != NULL) {
 
                         </ul>
                     </li>
+                    <!--/*************Country End Here**************/-->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-table"></i>
@@ -454,6 +453,7 @@ if ($privilege != NULL) {
                             </li>
                         </ul>
                     </li>
+                    <!------------------- Product Section Start Here--------------------->
                     <li class="nav-header">Product Information</li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
@@ -517,13 +517,13 @@ if ($privilege != NULL) {
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>Product" class="nav-link">
+                                <a href="<?php echo base_url(); ?>admin/Product" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>Add Product</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo base_url(); ?>Product/listProduct" class="nav-link">
+                                <a href="<?php echo base_url(); ?>admin/Product/listProduct" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>List Product</p>
                                 </a>
@@ -531,6 +531,46 @@ if ($privilege != NULL) {
 
                         </ul>
                     </li>
+                    <!------------------- Product Section End Here--------------------->
+                    <!-------Setting Controller--------->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-plus-square-o"></i>
+                            <p>
+                                Extras Setting
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo base_url();?>admin/Setting/Banner" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Add Banner</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url();?>admin/Setting/listBanner" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>List Banner</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo base_url();?>admin/Setting" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Change Logo</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="starter.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Starter Page</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-------Setting Controller--------->
+
+
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-plus-square-o"></i>
@@ -566,11 +606,12 @@ if ($privilege != NULL) {
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-header">MISCELLANEOUS</li>
+                    <li class="nav-header">Setting</li>
                     <li class="nav-item">
-                        <a href="https://adminlte.io/docs" class="nav-link">
+                       <!-- <a href="https://adminlte.io/docs" class="nav-link">-->
+                       <a href="<?php echo base_url(); ?>Setting" class="nav-link">
                             <i class="nav-icon fa fa-file"></i>
-                            <p>Documentation</p>
+                            <p></p>
                         </a>
                     </li>
                     <li class="nav-header">LABELS</li>

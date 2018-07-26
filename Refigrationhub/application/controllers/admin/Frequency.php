@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * Created by $ajaykan47.
@@ -17,6 +18,7 @@ class Frequency extends CI_Controller
             redirect('admin/Auth');
         }
         $this->load->model('Setting_model');
+        $this->load->model('Category_model');
     }
 
     public function index()
@@ -30,7 +32,8 @@ class Frequency extends CI_Controller
         $DbKey = "mast_frequency_id";
         $data['editResult'] = $this->Setting_model->getListById($idG, $DbKey, $tableName);
         $tableName = "mast_tbl_frequency";
-        $data['list'] = $this->Setting_model->getList($tableName);
+        $Wherecondition = array('delStatus' => 'no');
+        $data['list'] = $this->Category_model->getListByUserType($tableName, $Wherecondition);
         $this->load->view('admin/frequency/index', $data);
         $this->load->view('admin/include/footer');
 
@@ -154,6 +157,7 @@ class Frequency extends CI_Controller
             }
         }
     }
+
     public function Restore()
     {
         $idH = $this->input->get('id');

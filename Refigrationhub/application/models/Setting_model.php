@@ -82,5 +82,14 @@ class Setting_model extends CI_Model
         return $ret->$returnVal;
     }
 
+    public function showtList($tableName)
+    {
+        $this->db->select('*')
+            ->from($tableName);
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 
 }

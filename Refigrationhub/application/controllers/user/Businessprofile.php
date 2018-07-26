@@ -35,7 +35,6 @@ class Businessprofile extends CI_Controller
         $data['editAdDetail'] = $this->Bussinessprofile_model->getAdditionalDetailBySellerId($whereCondition);
         $data['listRequirement'] = $this->Bussinessprofile_model->getRequirementBySellerId($whereCondition);
         $data['listAwrd'] = $this->Bussinessprofile_model->getCertificateAwardBySellerId($whereCondition);
-        //print_r($data['listAwrd']); die;
         $this->load->view('user/seller/business-profile/index', $data);
         $this->load->view('user/seller/include/footer');
     }
@@ -180,7 +179,7 @@ class Businessprofile extends CI_Controller
                 'status' => 'Active',
                 'created_at' => date('Y-m-d H:i:s')
             );
-           // print_r($dataBussiness);
+            // print_r($dataBussiness);
             $tableName = "tbl_additionaldetail";
             $checkUsernType = $this->Bussinessprofile_model->getUserIdandType($reguser_id, $tableName);
             if ($checkUsernType < 1) {
@@ -319,7 +318,7 @@ class Businessprofile extends CI_Controller
                     $tableName = "tbl_productwebuy";
                     $res = $this->Setting_model->insertData($tableName, $dataWeBy);
                     if (!empty($res)) {
-                        $this->session->set_flashdata('done', 'Your Request  has been saved Successfully !');
+                        $this->session->set_flashdata('done', 'Your Requirement(s) has been successfully sent...!');
                         redirect('user/BusinessProfile');
                     } else {
                         $this->session->set_flashdata('error', 'You are Missing Something  Please Try Again ...!');
@@ -331,7 +330,6 @@ class Businessprofile extends CI_Controller
     }
 
     /************Product detail end here ********************/
-
 
     /*$CI =& get_instance(); $CI->load->library('email');
     $config['protocol']    = 'smtp';
@@ -392,20 +390,25 @@ class Businessprofile extends CI_Controller
         echo '</div>';
 
     }
-
     /****************Country Search*************************/
     /****************Requirement Delete *************************/
-    public function deleteRequiremnet(){
-        echo '<pre>';
-        print_r($_POST); die;
+    public function deleteRequiremnet()
+    {
+        $idH = $this->input->post('productwebuyIdHidden');
+        $tableName = "tbl_productwebuy";
+        $DbKey = "productwebuy_id";
+        if ($this->Setting_model->deleteRecord($DbKey, $idH, $tableName)) {
+
+            $this->session->set_flashdata('done', 'Your Requirement is Delete Successfully ...!!');
+            redirect('user/BusinessProfile');
+        } else {
+            $this->session->set_flashdata('error', 'Requirement  is Not Deleted Please Try Again...!!');
+            redirect('user/BusinessProfile');
+        }
     }
 
+
     /****************Requirement Delete *************************/
-
-
-
-
-
 
 
 }

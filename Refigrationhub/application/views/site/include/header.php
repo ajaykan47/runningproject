@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!doctype html>
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
 	</head>
 	<body class="front_page">
-	
+
 		<div class="wide_layout">
 		<header id="main_navigation_wrap">
 				<div class="top_part">
@@ -53,20 +53,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="container">
 
 						<div class="row">
-							
+
 				<div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="clearfix">
-                                    
+
                     <div class="alignright ">
                <nav>
-				
+
                 <ul class="topbar">
 				<li class="has_submenu"><a href="#">For Buyers</a>
 				<ul class="theme_menu submenu">
 				<li ><a href="<?php echo base_url('PostBuyRequirements');?>">Post Buy Requirements</a></li>
                 <li ><a href="<?php echo base_url('SubscribeToSellTradeAlerts');?>">Subscribe To Sell Trade Alerts</a></li>
 				<li ><a href="<?php echo base_url('SearchSupplier');?>">Search Suppliers</a></li>
-				
+
 				</ul>
 				</li>
                     <li class="has_submenu"><a href="#">For Suppliers</a>
@@ -74,21 +74,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<li ><a href="<?php echo base_url('DisplayNewProducts');?>">Display New Products</a></li>
                 <li ><a href="<?php echo base_url('SearchBuyTradeLeads');?>">Search Buy Trade Leads</a></li>
 				<li><a href="<?php echo base_url('SubscribeToBuyAlerts');?>">Subscribe To Buy Alerts</a></li>
-								
+
 				</ul>
 				</li>
                      <li class="has_submenu"><a href="#">Help</a>
 				<ul class="theme_menu submenu">
 				<li ><a href="#">Call Us: +91 0000000000</a></li>
                 <li ><a href="<?php echo base_url('Feedback');?>">Send Feedback</a></li>
-				<li><a href="<?php echo base_url('Contact');?>">Contact Us</a></li>			
+				<li><a href="<?php echo base_url('Contact');?>">Contact Us</a></li>
 				</ul>
 				</li>
                      <li class="has_submenu"><a href="#" style="color: #fe8d8d"><i class="icon-user"></i>Sign In &#124; Join Free</a>
 				<ul class="theme_menu submenu">
                     <div class="login">
-                     <a href="<?php echo base_url('Login');?>" class="button_blue middle_btn">Log in</a> 
-                        <h4 class="text-center pd4">If you are a new user </h4> 
+                     <a href="<?php echo base_url('Login');?>" class="button_blue middle_btn">Log in</a>
+                        <h4 class="text-center pd4">If you are a new user </h4>
                         <h5 class="text-center">Register</h5>
                         <a href="<?php echo base_url('JoinFree');?>" class="button_grey middle_btn">Join Free</a>
                     </div>
@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</li>
 				</ul>
                 </nav>
-                    </div>			
+                    </div>
 
 								</div>
 
@@ -127,12 +127,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 								<div class="col-lg-6 col-md-6 col-sm-6">
 									<form class="clearfix search">
-                                         <div class="fstElement fstSingleMode drp"> 
-                                        <li> <i class="icon-location-4"></i></li>     
-                <select class="singleSelectGrouped" name="language">  
-                    
+                                         <div class="fstElement fstSingleMode drp">
+                                        <li> <i class="icon-location-4"></i></li>
+                <select class="singleSelectGrouped" name="language">
+
                 <optgroup>
-                    
+
                     <option value="Delhi">Delhi</option>
                     <option value="Noida">Noida</option>
                     <option value="Gurgaon">Gurgaon</option>
@@ -148,7 +148,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <option value="Ahmedabad">Ahmedabad</option>
                     <option value="Allahabad">Allahabad</option>
                     <option value="Bhopal">Bhopal</option>
-                </optgroup>                
+                </optgroup>
             </select>
                     </div>
 				<input type="text" name="" tabindex="1" placeholder="Find your service here" class="alignleft">
@@ -178,7 +178,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     </a>
 											<div class="mega_menu clearfix">
 												<div class="mega_menu_item">
-												
+
 													<ul class="list_of_links">
 
 														<li><a href="<?php echo base_url('Products');?>">COMPRESSORS</a></li>
@@ -206,7 +206,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														<li><a href="<?php echo base_url('Products');?>">R 134 CANS</a></li>
 														<li><a href="<?php echo base_url('Products');?>">HAND SHUT OFF VALUES</a></li>
 														<li><a href="<?php echo base_url('Products');?>">LP HP PRESSURE SWITCH</a></li>
-														
+
 													</ul>
 
 												</div>
@@ -234,12 +234,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 															</div>
 														</div>
-                                                        
+
                                                     </div>
                                                     <hr>
                                                 </div>
-                                              
-                                               
+
+
 											</div>
 										</li>
 
@@ -431,8 +431,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														</div>
 													</div>
                                                     <hr>
-												</div>									
-											
+												</div>
+
 											</div>
 										</li>
 										<li class="has_megamenu">
@@ -488,8 +488,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														</div>
 													</div>
                                                     <hr>
-												</div>									
-							
+												</div>
+
 											</div>
 										</li>
 
@@ -553,10 +553,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														</div>
 													</div>
                                                     <hr>
-												</div>								
-											
+												</div>
+
 											</div>
-										</li>								
+										</li>
 
 									</ul>
 								</nav>
